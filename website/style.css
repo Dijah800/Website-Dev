@@ -1,0 +1,262 @@
+*{
+    padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     place-content: inherit;
+ }
+ body{
+     background: cadetblue;
+     display:flex;
+     justify-content: center;
+     align-items: center;
+     min-height: 100vh;
+ }
+
+ .main{
+    width: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.5)50%,rgba(0,0,0,0.5)50%), url(img/keele.jpg);
+    background-position: center;
+    background-size: cover;
+    height: 109vh;
+}
+ 
+ .navbar{
+     width: 1200px;
+     height: 75px;
+     margin: auto;
+ }
+ 
+ .icon{
+     width: 200px;
+     float: left;
+     height: 70px;
+ }
+ 
+ .logo{
+     color: white;
+     font-size: 35px;
+     font-family: Arial;
+     padding-left: 20px;
+     float: left;
+     padding-top: 10px;
+ }
+ .container{
+     position: relative;
+     width: 100%;
+     max-width: 1000px;
+     min-height: 1000px;
+     margin: 50px;
+     background: #fff;
+     display: grid;
+     grid-template-columns: 1fr 2fr;
+     
+ }
+
+ .menu{
+    width: 250px;
+    float: right;
+    height: 70px;
+}
+
+ul{
+  float: right;
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 25px;
+    margin-top: 24px;
+    font-size: 14px;
+}
+
+ul li a{
+    text-decoration: none;
+    font-family: arial;
+    font-weight: bold;
+    color: white;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover{
+    color: orangered;
+}
+
+ .container .left{
+     position: relative;
+     background: pink;
+     padding: 30px;
+}
+ .Profile{
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding-bottom: 20px;
+     border-bottom: 4px solid rgba(255,255,255,0.2);
+ }
+
+.Profile h2 span{
+     font-size: 1.2em;
+     font-weight: 300;
+     position: relative;
+ }
+
+ .Profile .Imgtype{
+     position: relative;
+     width: 200px;
+     height: 200px;
+     border-radius: 50%;
+     overflow: hidden;
+ }
+ .Profile .Imgtype img{
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     object-fit: cover;
+ }
+ 
+ .ContactInfo{
+     padding-top: 8px;
+}
+
+.title{
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+ .Certification ul{
+    padding-bottom: 20px;
+    border-bottom: 4px solid rgba(255,255,255,0.2);
+ }
+
+ .Skills{
+    padding-bottom: 20px;
+    border-bottom: 4px solid rgba(255,255,255,0.2);
+}
+
+ .container .right{
+     position: relative;
+     background: white;
+     padding: 40px;
+ }
+ .group1{
+     margin: 0px;
+ }
+ .group1:last-child{
+     margin: 0;
+ }
+ .group1 .box{
+     display: flex;
+     flex-direction: row;
+     margin: 20px 0;
+ }
+ .group1 .box .year_company{
+     min-width: 230px;
+ }
+ .group1 .box .year_company h5{
+     text-transform: uppercase;
+     font-family: Arial, Helvetica, sans-serif;
+     font-weight: 50;
+ }
+ .group1 .box .text h4{
+     font-weight: 600;
+     text-transform: uppercase;
+     font-size: 16px;
+ }
+
+ .p1{
+     padding: 9px 10px;
+     font-size: 11px;
+ }
+
+ .skill-container{
+     width: 90%;
+     background-color: #4d4d4d;
+     margin: 0px 10px;
+ }
+
+ .skill{
+     text-align: right;
+     padding-top: 2px;
+     padding-bottom: 2px;
+     color: white
+ }
+ 
+ .html{
+     width: 90%;
+     background-color: white;
+ }
+
+ .css{
+    width: 75%;
+    background-color: white;
+}
+
+.java{
+    width: 30%;
+    background-color: white;
+}
+
+.sql{
+    width: 50%;
+    background-color: white;
+}
+
+.ContactInfo{
+    display: inline-block;
+    padding-bottom: 20px;
+     border-bottom: 4px solid rgba(255,255,255,0.2);
+}
+
+.ContactInfo ul{
+    display: inline-block;
+}
+
+.ContactInfo ul li{
+    display: relative;
+}
+
+.ContactInfo ul li span{
+   font-weight: 60;
+   position: inline;
+}
+
+.ContactInfo ul li .icon{
+    display: inline-block;
+    width: 30px;
+    font-size: 18px;
+    height: 10px;
+    width: 42px;
+}
+
+.Professional .title{
+    font-weight: bold;
+    display: center; 
+
+}
+
+.info{
+    margin-left: 30%;
+    margin-top: 20%;
+   
+    
+}
+
+.info h3{
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.info p{
+    margin-left: 5%;
+    color: #fff;
+    font-size: 22px;
+    font-weight: bold;
+ 
+}

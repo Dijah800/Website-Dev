@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../../assets/style.css">
+    <title>
+        Login - CSC-20021 Web Technologies
+    </title>
+    
+</head>
+<body>
+    <div>
+            <nav class="navbar">
+                <a class="mybrand" href="index.html">CSC-20021 Web Technologies</a>
+                <ul>
+                    <li>
+                        <a href="list.html"> Records </a>
+                    </li>
+                    <li class="active">
+                        <a href="#"> New Record </a>
+                    </li>
+                    <li>
+                        <a href="logout.php" class="login">Logout</a>
+                    </li>
+                </ul>
+            </nav>
+    </div>
+
+    <div class="container">
+        <h1> Add Rew Record </h1>
+        <form action="submit.php" method="post" class="" id="">
+            <div class="">
+                <div class="my-forms"> Title : <input type="text" id="username" name="username" required> </div>
+                <div class="my-forms"> Authors: <input type="text" id="password" name="password" required> </div>
+                <div class="my-forms"> Year : <input type="text" id="username" name="username" required> </div>
+                <div class="my-forms"> Journal: <input type="text" id="password" name="password" required> </div>
+                <div class="my-forms"> DOI : <input type="text" id="username" name="username" required> </div>
+                <div class="my-forms"> School: <input type="text" id="password" name="password" required> </div>
+            </div>
+            <div>
+                <button type="submit"> Add Record </button>
+            </div>
+        </form>
+    </div>
+
+        <footer>
+            <hr>
+            &copy; 2022
+        </footer>
+</body>
+</html>

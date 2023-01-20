@@ -1,0 +1,376 @@
+<html>
+<script src="dailyweatherdata.js"></script>
+<script src="weatherforecast.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.5.1/chart.min.js"
+  integrity="sha512-Wt1bJGtlnMtGP0dqNFH1xlkLBNpEodaiQ8ZN5JLA5wpc1sUlk/O5uuOMNgvzddzkpvZ9GLyYNa8w2s7rqiTk5Q=="
+  crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel ="Stylesheet" type="text/css" href="style.css">
+
+<body>
+
+<!-- Navigation Link-->
+  <div class ="nav_bar">
+       
+    <div class="menu">
+         <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="cv.html">Cv</a></li>
+            <li><a href="weather.html">Weather</a></li>
+            <li><a href="login.php">Login</a></li>    
+         </ul>
+    </div>
+
+  <div class="canvas">
+  Longitude: <label id="lon"></label>
+
+  <!--Chart1 -->
+  <div class="heading">
+    <h2>Chart 1</h2>
+
+  <canvas id="myChart"></canvas>
+  <label for="typeselector">Choose a: Chart Type</label>
+  <select name="typeselector" id ="typeselector">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="bar">Bar</option>
+    <option value="pie">Pie</option>
+    <option value="line">Line</option>
+  </select>
+   
+  <label for="colorselector">Color Type</label>
+  <select name="colorselector" id ="colorselector">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="pink">Pink</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+  </select>
+
+  <label for="sizeselector">Size Type</label>
+  <select name="sizeselector" id ="sizeselector">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="12">12</option>
+    <option value="20">20</option>
+    <option value="25">25</option>
+  </select>
+
+  <label for="fontselector">Font Type</label>
+  <select name="fontselector" id ="fontselector">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="sans-serif">sans-serif</option>
+    <option value="agency fb">Agency FB</option>
+    <option value="century">Century</option>
+  </select>
+
+   <!--end of chart1 -->
+  <br>
+
+  <!--Chart2-->
+  <h2>Chart 2</h2>
+
+  <canvas id="myChart2"></canvas>
+  <label for="typeselector1">Choose a: Chart Type</label>
+  <select name="typeselector1" id ="typeselector1">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="bar">Bar</option>
+    <option value="pie">Pie</option>
+    <option value="line">Line</option>
+  </select>
+
+  <label for="colorselector1">Color Type</label>
+  <select name="colorselector1" id ="colorselector1">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="pink">Pink</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+  </select>
+  
+  <label for="sizeselector1">Size Type</label>
+  <select name="sizeselector1" id ="sizeselector1">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="12">12</option>
+    <option value="15">15</option>
+    <option value="20">20</option>
+  </select>
+
+  <label for="fontselector1">Font Type</label>
+  <select name="fontselector1" id ="fontselector1">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="Lucida Sans">Lucida Sans</option>
+    <option value="Georgia">Georgia</option>
+    <option value="Ms Gothic">MS Gothic</option>
+  </select>
+   <!--end of chart2-->
+
+   <br>
+  <h2>Chart 3</h2>
+
+  <canvas id="myChart3"></canvas>
+  <label for="typeselector2">Choose a: Chart Type</label>
+  <select name="typeselector2" id ="typeselector2">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="bar">Bar</option>
+    <option value="pie">Pie</option>
+    <option value="line">Line</option>
+  </select>
+
+  <label for="colorselector2">Color Type</label>
+  <select name="colorselector2" id ="colorselector2">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="pink">Pink</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+  </select>
+
+  <label for="sizeselector2">Size Type</label>
+  <select name="sizeselector2" id ="sizeselector2">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="12">12</option>
+    <option value="20">20</option>
+    <option value="25">25</option>
+  </select>
+
+  <label for="fontselector2">Font Type</label>
+  <select name="fontselector2" id ="fontselector2">
+    <optgroup value label="Select Type"></optgroup>
+    <option value="Algerian">ALGERIAN</option>
+    <option value="agency fb">Agency FB</option>
+    <option value="Segoe UI Black">Segoe UI Black</option>
+  </select>
+
+</body>
+
+<script>
+  //TODO: Task 1:
+  var daily = JSON.parse(dailydata_stoke);
+  document.getElementById('lon').innerHTML = daily.coord.lon;
+
+  //TODO: Task 2, 3 and 4
+  var forecast = JSON.parse(forecast_stoke);
+  this.dateList = forecast.list.map(list => {
+    return list.dt_txt;
+  });
+
+  this.temperatureList = forecast.list.map(list => {
+    return list.main.temp;
+  });
+//end of stoke
+  var forecast = JSON.parse(forecast_london);
+  this.dateList = forecast.list.map(list => {
+    return list.dt_txt;
+  });
+
+  this.degList = forecast.list.map(list => {
+    return list.wind.deg;
+  });
+  //end of london
+
+  var forecast = JSON.parse(forecast_stoke);
+  this.dateList = forecast.list.map(list => {
+    return list.dt_txt;
+  });
+
+  this.humidityList = forecast.list.map(list => {
+    return list.main.humidity;
+  });
+
+  var ctx = document.getElementById('myChart').getContext('2d')
+  var chart1 = new Chart(ctx, {
+    type: "line",
+    data: {
+      labels: this.dateList,
+      datasets: [
+        {
+          label: "Temperature",
+          backgroundColor: "green",
+          borderColor: "blue",
+          fill: false,
+          data: this.temperatureList
+        }
+      ],
+    },
+    
+    options: {
+        scales: {
+            y: {
+                ticks: {
+                    font: {
+                      size: 12,
+                      family:'Helvetica',
+                    }
+                }
+            }
+        }
+    }
+});
+    
+
+
+  var rtx = document.getElementById('myChart2').getContext('2d');
+  var chart2 = new Chart(rtx, {
+    type: "line",
+    data: {
+      labels: this.dateList,
+      datasets: [
+        {
+          label: "humidity",
+          backgroundColor: "pink",
+          borderColor: "blue",
+          fill: false,
+          data: this.humidityList
+        }
+      ]
+    },
+
+     options: {
+        scales: {
+            y: {
+                ticks: {
+                    font: {
+                      size: 12,
+                      family: 'Calibri'
+                    }
+                }
+            }
+        }
+    }
+  });
+
+  var ptx = document.getElementById('myChart3').getContext('2d');
+  var chart3 = new Chart(ptx, {
+    type: "line",
+    data: {
+      labels: this.dateList,
+      datasets: [
+        {
+          label: "deg",
+          backgroundColor: "pink",
+          borderColor: "blue",
+          fill: true,
+          size: 10,
+          data: this.degList
+        
+        }
+      ]
+    },
+
+    options: {
+        scales: {
+            y: {
+                ticks: {
+                    font: {
+                      size: 12,
+                      family: 'Arial'
+                    }
+                }
+            }
+        }
+    }
+  });
+  
+  var go = document.getElementById('typeselector');
+  go.addEventListener('change', changeChart);
+  function changeChart() {
+  chart1.config.type = go.value;
+  chart1.update();
+}
+
+var color1 = document.getElementById('colorselector');
+  color1.addEventListener('change', changedChart);
+  function changedChart() {
+  chart1.data.datasets[0].backgroundColor = color1.value;
+  chart1.data.datasets[0].borderColor = color1.value;
+  chart1.update();
+}
+
+var sizes = document.getElementById('sizeselector');
+  sizes.addEventListener('change', choosesize);
+  function choosesize() {
+    console.log(sizes.value);
+    console.log(chart1.options);
+  chart1.options.scales.y.ticks.font.size = sizes.value;
+  chart1.update();
+}
+
+var fonts = document.getElementById('fontselector');
+  fonts.addEventListener('change', choosefont);
+  function choosefont() {
+    console.log(fonts.value);
+    console.log(chart1.options);
+  chart1.options.scales.y.ticks.font.family = fonts.value;
+  chart1.update();
+}
+
+var jump = document.getElementById('typeselector1');
+  jump.addEventListener('change', changeschart);
+  function changeschart() {
+  chart2.config.type = jump.value;
+  chart2.update();
+  console.log(jump.value);
+}
+
+
+var color2 = document.getElementById('colorselector1');
+  color2.addEventListener('change', changedchart);
+  console.log(color2)
+  function changedchart() {
+  chart2.data.datasets[0].backgroundColor = color2.value;
+  chart2.data.datasets[0].borderColor = color2.value;
+  chart2.update();
+  console.log(color2.value);
+}
+
+var Fonts = document.getElementById('fontselector1');
+  Fonts.addEventListener('change', chosefont);
+  function chosefont() {
+    console.log(Fonts.value);
+    console.log(chart2.options);
+  chart2.options.scales.y.ticks.font.family = Fonts.value;
+  chart2.update();
+}
+
+var click = document.getElementById('typeselector2');
+  click.addEventListener('change', pickchart) ;
+  function pickchart() {
+  chart3.config.type = click.value;
+  chart3.update();
+  
+}
+
+var Sizes = document.getElementById('sizeselector1');
+  Sizes.addEventListener('change', Chosedsize);
+  function Chosedsize() {
+    console.log(Sizes.value);
+    console.log(chart2.options);
+  chart2.options.scales.y.ticks.font.size = Sizes.value;
+  chart2.update();
+}
+
+var color3 = document.getElementById('colorselector2');
+  color3.addEventListener('change', changechar);
+  function changechar() {
+  chart3.data.datasets[0].backgroundColor = color3.value;
+  chart3.data.datasets[0].borderColor = color3.value;
+  chart3.update();
+}
+
+var sized = document.getElementById('sizeselector2');
+  sized.addEventListener('change', chosedsize);
+  function chosedsize() {
+    console.log(sized.value);
+    console.log(chart3.options);
+  chart3.options.scales.y.ticks.font.size = sized.value;
+  chart3.update();
+}
+
+var Font = document.getElementById('fontselector2');
+  Font.addEventListener('change', Choosefont);
+  function Choosefont() {
+    console.log(Font.value);
+    console.log(chart3.options);
+  chart3.options.scales.y.ticks.font.family = Font.value;
+  chart3.update();
+}
+
+
+</script>
+
+</html>
